@@ -1,4 +1,7 @@
-const API_BASE = process.env.REACT_APP_API || 'http://localhost:4000';
+// When deployed on Firebase the API routes are served by the "api" Cloud
+// Function. During development `REACT_APP_API` can point to the emulator
+// endpoint (e.g. http://localhost:5001/<project>/us-central1/api).
+const API_BASE = process.env.REACT_APP_API || '/api';
 
 export async function getIncidents() {
   const res = await fetch(`${API_BASE}/incidents`);
